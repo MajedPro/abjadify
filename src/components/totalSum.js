@@ -15,7 +15,7 @@ export function TotalSum(props) {
     hdivis7 = props.heavenly % 7 === 0 ? <p>divided by 7 = {props.heavenly / 7}</p> : null
     edivis9 = props.heavenly % 9 === 0 ? <p>divided by 9 = {props.heavenly / 9}</p> : null
     edivis7 = props.heavenly % 7 === 0 ? <p>divided by 7 = {props.heavenly / 7}</p> : null
-    mod9 = <p>mod9: {props.heavenly % 9}</p>
+    mod9 = <p>mod 9: {props.heavenly % 9}</p>
   }
   return (
       <div className='totals'>
@@ -24,7 +24,7 @@ export function TotalSum(props) {
         {hdivis7}
         {earthly}
         {edivis9}
-        {edivis9}
+        {edivis7}
         {mod9}
       </div>
     )

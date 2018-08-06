@@ -23,21 +23,25 @@ const earthly = (state = initialState, action) => {
         if (eValues[letter]) {
           totalSum += eValues[letter];
         }
+        return null;
       });
 
       // word sums
       const splitStringSpaced = input.trim().split(' ');
       splitStringSpaced.map(word => {
-        let currentWord = {}
-        let eWordSum = 0;
-        const splitWord = word.split('');
-        const reversedWord = splitWord.reverse().join('')
-        splitWord.map(letter => {
-          eWordSum += eValues[letter];
-        });
-        currentWord['key'] = word
-        currentWord['value'] = eWordSum
-        words.push(currentWord)
+        if (word !== '') {
+          let currentWord = {}
+          let eWordSum = 0;
+          const splitWord = word.split('');
+          splitWord.map(letter => {
+            eWordSum += eValues[letter];
+            return null
+          });
+          currentWord['key'] = word
+          currentWord['value'] = eWordSum
+          words.push(currentWord)
+        }
+        return null;
       });
 
       // letter sums
@@ -45,10 +49,11 @@ const earthly = (state = initialState, action) => {
         if (eValues[letter]) {
           letters.push(eValues[letter]);
           spaced.push(eValues[letter]);
-        } else if (letter === ' '){
+        } else if (letter === ' ') {
           letters.push('   ');
           spaced.push('   ')
         }
+        return null;
       })
       letters = letters.join('')
       spaced = spaced.join(' ')

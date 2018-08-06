@@ -4,7 +4,6 @@ import TotalSum from './components/totalSum'
 import WordSums from './components/wordSums'
 import LetterSums from './components/letterSums'
 import Footer from './components/footer'
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {

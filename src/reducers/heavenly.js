@@ -26,21 +26,25 @@ const heavenly = (state = initialState, action) => {
         if (hValues[letter]) {
           totalSum += hValues[letter];
         }
+        return null;
       });
 
       // word sums
       const splitStringSpaced = input.trim().split(' ');
       splitStringSpaced.map(word => {
-        let currentWord = {}
-        let hWordSum = 0;
-        const splitWord = word.split('');
-        const reversedWord = splitWord.reverse().join('')
-        splitWord.map(letter => {
-          hWordSum += hValues[letter];
-        });
-        currentWord['key'] = word
-        currentWord['value'] = hWordSum
-        words.push(currentWord)
+        if (word !== '') {
+          let currentWord = {}
+          let hWordSum = 0;
+          const splitWord = word.split('');
+          splitWord.map(letter => {
+            hWordSum += hValues[letter];
+            return null;
+          });
+          currentWord['key'] = word
+          currentWord['value'] = hWordSum
+          words.push(currentWord)
+        }
+        return null
       });
 
       // letter sums
@@ -49,10 +53,11 @@ const heavenly = (state = initialState, action) => {
           letters.push(hValues[letter]);
           spaced.push(hValues[letter])
           letterCount += 1
-        } else if (letter === ' '){
+        } else if (letter === ' ') {
           letters.push('   ');
           spaced.push('   ')
         }
+        return null;
       })
       letters = letters.join('')
       spaced = spaced.join(' ')

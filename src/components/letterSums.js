@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { hValues } from '../abjad-keys/heavenly'
 import './letterSums.css'
 
 export function LetterSums(props) {
