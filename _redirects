@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-http://pensive-pare-8f9594.netlify.com/* http://www.barakahonline.com/:splat 301!
