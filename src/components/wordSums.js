@@ -23,13 +23,12 @@ export class WordSums extends React.Component {
       )
     })
     const output = this.props.heavenly.length > 0 ? <div className='list-container'>
-      <h2>Heavenly Word Sums</h2>
       <p>Word count: {this.props.heavenly.length}</p>
+      <h2>Heavenly Word Sums</h2>
       <ul className='heavenly-list'>
         {heavenly}
       </ul>
       <h2>Earthly Word Sums</h2>
-      <p>Word count: {this.props.earthly.length}</p>
       <ul className='earthly-list'>
         {earthly}
       </ul>

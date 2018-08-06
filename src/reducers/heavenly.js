@@ -6,6 +6,7 @@ const initialState = {
   wordSums: [],
   letters: null,
   spaced: null,
+  letterCount: null,
 }
 
 const heavenly = (state = initialState, action) => {
@@ -17,6 +18,7 @@ const heavenly = (state = initialState, action) => {
       let words = []
       let letters = []
       let spaced = []
+      let letterCount = 0
 
       // total sum
       const splitString = input.trim().split('')
@@ -46,6 +48,7 @@ const heavenly = (state = initialState, action) => {
         if (hValues[letter]) {
           letters.push(hValues[letter]);
           spaced.push(hValues[letter])
+          letterCount += 1
         } else if (letter === ' '){
           letters.push('   ');
           spaced.push('   ')
@@ -59,7 +62,8 @@ const heavenly = (state = initialState, action) => {
         total: totalSum,
         wordSums: words,
         letters,
-        spaced
+        spaced,
+        letterCount
       }
 
     default:

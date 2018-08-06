@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { hValues } from '../abjad-keys/heavenly'
 import './letterSums.css'
 
 export function LetterSums(props) {
@@ -13,6 +14,7 @@ export function LetterSums(props) {
         onClick={() => props.toggle()} />
       <span className="slider round"></span>
     </label>
+    <p>Letter count: {props.count}</p>
     <div className='letters compressed' id='h-compressed'>
       <h2>Heavenly</h2>
       <p className='letter-values'>{props.heavenly}</p>
@@ -41,7 +43,8 @@ const mapStateToProps = (state) => ({
   heavenly: state.heavenly.letters,
   earthly: state.earthly.letters,
   hspaced: state.heavenly.spaced,
-  espaced: state.earthly.spaced
+  espaced: state.earthly.spaced,
+  count: state.heavenly.letterCount
 })
 
 export default connect(mapStateToProps)(LetterSums)
