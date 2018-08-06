@@ -17,13 +17,14 @@ export class TextInput extends React.Component {
   render() {
     return (
       <form className='input-form' onSubmit={e => this.onSubmit(e)}>
-        <label htmlFor='userInput'>Enter arabic text here:</label>
+        <label htmlFor='userInput' className='input-label'>:Enter arabic text here</label>
         <textarea
           type='text'
           name='userInput'
           id='userInput'
           className='userInput'
           autoComplete='off'
+          placeholder='الله أكبر...'
           rows='10'
           cols='30'
           ref={input => (this.input = input)}

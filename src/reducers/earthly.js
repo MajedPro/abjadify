@@ -4,7 +4,8 @@ import { eValues } from '../abjad-keys/earthly'
 const initialState = {
   total: null,
   wordSums: [],
-  letters: null
+  letters: null,
+  spaced: null
 }
 
 const earthly = (state = initialState, action) => {
@@ -14,6 +15,7 @@ const earthly = (state = initialState, action) => {
       let totalSum = 0
       let words = []
       let letters = []
+      let spaced = []
 
       // total sum
       const splitString = input.split('')
@@ -39,21 +41,25 @@ const earthly = (state = initialState, action) => {
       });
 
       // letter sums
-      const splitStringReversed = input.split('').reverse();
-      splitStringReversed.map(letter => {
+      splitString.map(letter => {
         if (eValues[letter]) {
           letters.push(eValues[letter]);
-        } else {
-          letters.push(' ');
+          spaced.push(eValues[letter]);
+        } else if (letter === ' '){
+          letters.push('   ');
+          spaced.push('   ')
         }
       })
       letters = letters.join('')
+      spaced = spaced.join(' ')
+
 
       return {
         ...state,
         total: totalSum,
         wordSums: words,
-        letters: letters
+        letters,
+        spaced
       }
 
     default:

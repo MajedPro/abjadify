@@ -4,7 +4,8 @@ import { hValues } from '../abjad-keys/heavenly'
 const initialState = {
   total: null,
   wordSums: [],
-  letters: null
+  letters: null,
+  spaced: null,
 }
 
 const heavenly = (state = initialState, action) => {
@@ -15,6 +16,7 @@ const heavenly = (state = initialState, action) => {
       let totalSum = 0
       let words = []
       let letters = []
+      let spaced = []
 
       // total sum
       const splitString = input.trim().split('')
@@ -40,21 +42,24 @@ const heavenly = (state = initialState, action) => {
       });
 
       // letter sums
-      const splitStringReversed = input.trim().split('').reverse();
-      splitStringReversed.map(letter => {
+      splitString.map(letter => {
         if (hValues[letter]) {
           letters.push(hValues[letter]);
-        } else {
-          letters.push(' ');
+          spaced.push(hValues[letter])
+        } else if (letter === ' '){
+          letters.push('   ');
+          spaced.push('   ')
         }
       })
       letters = letters.join('')
+      spaced = spaced.join(' ')
 
       return {
         ...state,
         total: totalSum,
         wordSums: words,
-        letters: letters
+        letters,
+        spaced
       }
 
     default:

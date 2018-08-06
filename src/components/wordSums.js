@@ -8,7 +8,7 @@ export class WordSums extends React.Component {
     let heavenly = this.props.heavenly.map((word, index) => {
       return (
         <li key={index} className='hpair'>
-          <p>{word.key}</p>
+          <p className='word'>{word.key}</p>
           <p>{word.value}</p>
         </li>
       )
@@ -17,19 +17,24 @@ export class WordSums extends React.Component {
     let earthly = this.props.earthly.map((word, index) => {
       return (
         <li key={index} className='epair'>
-          <p>{word.key}</p>
+          <p className='word'>{word.key}</p>
           <p>{word.value}</p>
         </li>
       )
     })
+    const output = this.props.heavenly.length > 0 ? <div className='list-container'>
+      <h2>Heavenly Word Sums</h2>
+      <ul className='heavenly-list'>
+        {heavenly}
+      </ul>
+      <h2>Earthly Word Sums</h2>
+      <ul className='earthly-list'>
+        {earthly}
+      </ul>
+    </div> : null
     return (
       <div>
-        <ul className='heavenly-list'>
-          {heavenly}
-        </ul>
-        <ul className='earthly-list'>
-          {earthly}
-        </ul>
+        {output}
       </div>
     )
   }
