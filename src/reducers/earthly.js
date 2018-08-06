@@ -18,7 +18,7 @@ const earthly = (state = initialState, action) => {
       let spaced = []
 
       // total sum
-      const splitString = input.split('')
+      const splitString = input.trim().split('')
       splitString.map(letter => {
         if (eValues[letter]) {
           totalSum += eValues[letter];
@@ -26,7 +26,7 @@ const earthly = (state = initialState, action) => {
       });
 
       // word sums
-      const splitStringSpaced = input.split(' ');
+      const splitStringSpaced = input.trim().split(' ');
       splitStringSpaced.map(word => {
         let currentWord = {}
         let eWordSum = 0;

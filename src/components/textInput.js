@@ -8,8 +8,8 @@ export class TextInput extends React.Component {
     event.preventDefault()
     const textArea = document.getElementById('userInput')
     const split = textArea.value.split('\n')
-    console.log(split.join(''))
-    this.props.dispatch(submitInput(split.join('')))
+    console.log(split.join(' '))
+    this.props.dispatch(submitInput(split.join(' ')))
     this.input.value = ''
     // console.log(value)
   }

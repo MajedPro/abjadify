@@ -15,10 +15,10 @@
 .list-container {
   /* display: flex;
   direction: rtl; */
-  border: 1px solid white;
+  border: 1px solid rgb(168, 168, 168);
   border-radius: 12px;
   padding: 10px;
-  background-color: rgb(82, 82, 82);
+  background-color: rgb(255, 255, 255);
   /* color: rgb(167, 167, 167); */
 }
 
