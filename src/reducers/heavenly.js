@@ -1,5 +1,6 @@
 import { SUBMIT_INPUT } from "../actions";
 import { hValues } from '../abjad-keys/heavenly'
+import { neutral } from '../abjad-keys/neutral'
 
 const initialState = {
   total: null,
@@ -7,6 +8,7 @@ const initialState = {
   letters: null,
   spaced: null,
   letterCount: null,
+  unused: null,
 }
 
 const heavenly = (state = initialState, action) => {
@@ -19,6 +21,7 @@ const heavenly = (state = initialState, action) => {
       let letters = []
       let spaced = []
       let letterCount = 0
+      let unused = neutral
 
       // total sum
       const splitString = input.trim().split('')
@@ -49,6 +52,10 @@ const heavenly = (state = initialState, action) => {
 
       // letter sums
       splitString.map(letter => {
+        const index = unused.indexOf(letter)
+        if (index > -1) {
+          unused.splice(index, 1)
+        }
         if (hValues[letter]) {
           letters.push(hValues[letter]);
           spaced.push(hValues[letter])
@@ -68,7 +75,8 @@ const heavenly = (state = initialState, action) => {
         wordSums: words,
         letters,
         spaced,
-        letterCount
+        letterCount,
+        unused
       }
 
     default:

@@ -22,8 +22,18 @@ export class WordSums extends React.Component {
         </li>
       )
     })
+
+    let unused = this.props.unused.map((letter, index) => {
+      return (
+        <p key={index} className='unused-letter'>{letter}</p>
+      )
+    })
     const output = this.props.heavenly.length > 0 ? <div className='list-container'>
       <p>Word count: {this.props.heavenly.length}</p>
+      <p>Unused letters:</p>
+      <div className='unused-container'>
+        {unused}
+      </div>
       <h2>Heavenly Word Sums</h2>
       <ul className='heavenly-list'>
         {heavenly}
@@ -43,7 +53,8 @@ export class WordSums extends React.Component {
 
 const mapStateToProps = (state) => ({
   heavenly: state.heavenly.wordSums,
-  earthly: state.earthly.wordSums
+  earthly: state.earthly.wordSums,
+  unused: state.heavenly.unused || []
 })
 
 export default connect(mapStateToProps)(WordSums)

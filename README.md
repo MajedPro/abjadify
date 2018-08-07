@@ -5,7 +5,7 @@
 
 ## Instructions
 To run locally:
-- clone down the repo ( https://github.com/arsalonk/abjadify )
+- clone down the repo
 - run npm install
 - run npm start
 

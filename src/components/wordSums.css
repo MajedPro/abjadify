@@ -20,6 +20,17 @@
   margin: 0 0 20px 0;
 }
 
+.unused-container {
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+  font-size: 35px;
+}
+
+.unused-letter {
+  margin: 0 5px;
+}
+
 .word {
   font-size: 35px;
 }
