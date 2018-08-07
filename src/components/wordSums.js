@@ -54,7 +54,7 @@ export class WordSums extends React.Component {
 const mapStateToProps = (state) => ({
   heavenly: state.heavenly.wordSums,
   earthly: state.earthly.wordSums,
-  unused: state.heavenly.unused || []
+  unused: state.general.unused || []
 })
 
 export default connect(mapStateToProps)(WordSums)

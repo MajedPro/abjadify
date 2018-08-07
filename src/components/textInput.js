@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import { submitInput } from '../actions';
+import { submitInput, changeUnused, countLetters } from '../actions';
 import './textInput.css'
 
 export class TextInput extends React.Component {
@@ -8,10 +8,10 @@ export class TextInput extends React.Component {
     event.preventDefault()
     const textArea = document.getElementById('userInput')
     const split = textArea.value.split('\n')
-    console.log(split.join(' '))
     this.props.dispatch(submitInput(split.join(' ')))
+    this.props.dispatch(changeUnused(split.join(' ')))
+    this.props.dispatch(countLetters(split.join(' ')))
     this.input.value = ''
-    // console.log(value)
   }
 
   render() {

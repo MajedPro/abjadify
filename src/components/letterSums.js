@@ -43,7 +43,7 @@ const mapStateToProps = (state) => ({
   earthly: state.earthly.letters,
   hspaced: state.heavenly.spaced,
   espaced: state.earthly.spaced,
-  count: state.heavenly.letterCount
+  count: state.general.letterCount
 })
 
 export default connect(mapStateToProps)(LetterSums)
