@@ -29,16 +29,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Abjadify</h1>
-        </header>
-        <main className='main'>
-          <TextInput />
-          <TotalSum />
-          <WordSums />
-          <LetterSums toggle={() => this.toggle()}/>
-        </main>
+      <div>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Abjadify</h1>
+          </header>
+          <main className='main'>
+            <TextInput />
+            <TotalSum />
+            <WordSums />
+            <LetterSums toggle={() => this.toggle()} />
+          </main>
+        </div>
         <Footer />
       </div>
     );

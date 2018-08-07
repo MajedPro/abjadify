@@ -1,8 +1,7 @@
 
 .main-footer {
   font-size: 0.875rem;
-  background-color: rgb(53, 53, 53);
-  margin-top: 277px;
+  background-color: rgb(255, 255, 255);
   padding: 1em 4%;
   text-align: center;
   height: 60px;
@@ -10,13 +9,13 @@
 
 .main-footer p {
   margin: 0;
-  color: white;
+  color: rgb(0, 0, 0);
   padding-top: 5px;
 }
 
 .site-creator-link {
   text-decoration: none;
-  color: rgb(189, 125, 186);
+  color: rgb(23, 123, 180);
   position: relative;
   font-weight: 600;
   text-decoration: none;
@@ -33,7 +32,7 @@
 @media (min-width: 800px) {
   .site-creator-link {
     text-decoration: none;
-    color: #D2F593;
+    color: rgb(23, 123, 180);
   
     position: relative;
     font-weight: 600;
@@ -46,7 +45,7 @@
   .site-creator-link:before,
   .site-creator-link:after {
     content: '';
-    background: #D2F593;
+    background: rgb(23, 123, 180);
     position: absolute;
     width: 0;
     height: 2px;
@@ -66,7 +65,7 @@
   }
   .site-creator-link:hover,
   .site-creator-link:focus {
-    color: #81B84A;
+    color: rgb(22, 179, 207);
   }
   
   

@@ -1,0 +1,18 @@
+.totals {
+  display: flex;
+  justify-content: center;
+}
+
+.heavenly-totals, .earthly-totals {
+  width: 50%;
+  border: 2px solid rgb(168, 168, 168);
+  border-radius: 8px;
+}
+
+.heavenly-totals {
+  margin: 20px 5px 20px 0;
+}
+
+.earthly-totals {
+  margin: 20px 0 20px 5px;
+}

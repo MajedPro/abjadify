@@ -13,13 +13,11 @@
 }
 
 .list-container {
-  /* display: flex;
-  direction: rtl; */
   border: 1px solid rgb(168, 168, 168);
   border-radius: 12px;
   padding: 10px;
   background-color: rgb(255, 255, 255);
-  /* color: rgb(167, 167, 167); */
+  margin: 0 0 20px 0;
 }
 
 .word {
