@@ -17,47 +17,37 @@ const earthly = (state = initialState, action) => {
       let letters = []
       let spaced = []
 
-      // total sum
+      // total and letter sums
       const splitString = input.trim().split('')
-      splitString.map(letter => {
+
+      splitString.forEach(letter => {
         if (eValues[letter]) {
           totalSum += eValues[letter];
-        }
-        return null;
-      });
-
-      // word sums
-      const splitStringSpaced = input.trim().split(' ');
-      splitStringSpaced.map(word => {
-        if (word !== '') {
-          let currentWord = {}
-          let eWordSum = 0;
-          const splitWord = word.split('');
-          splitWord.map(letter => {
-            eWordSum += eValues[letter];
-            return null
-          });
-          currentWord['key'] = word
-          currentWord['value'] = eWordSum
-          words.push(currentWord)
-        }
-        return null;
-      });
-
-      // letter sums
-      splitString.map(letter => {
-        if (eValues[letter]) {
           letters.push(eValues[letter]);
-          spaced.push(eValues[letter]);
+          spaced.push(eValues[letter])
         } else if (letter === ' ') {
-          letters.push('   ');
-          spaced.push('   ')
+          letters.push('   ');
+          spaced.push('   ')
         }
-        return null;
       })
       letters = letters.join('')
       spaced = spaced.join(' ')
 
+      // word sums
+      const splitStringSpaced = input.trim().split(' ');
+      splitStringSpaced.forEach(word => {
+        if (word !== '') {
+          let currentWord = {}
+          let hWordSum = 0;
+          const splitWord = word.split('');
+          splitWord.forEach(letter => {
+            hWordSum += eValues[letter];
+          });
+          currentWord['key'] = word
+          currentWord['value'] = hWordSum
+          words.push(currentWord)
+        }
+      });
 
       return {
         ...state,

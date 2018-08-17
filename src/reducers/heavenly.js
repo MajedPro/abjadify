@@ -20,18 +20,19 @@ const heavenly = (state = initialState, action) => {
 
       // total and letter sums
       const splitString = input.trim().split('')
+      
       splitString.forEach(letter => {
         if (hValues[letter]) {
           totalSum += hValues[letter];
           letters.push(hValues[letter]);
           spaced.push(hValues[letter])
         } else if (letter === ' ') {
-          letters.push('   ');
-          spaced.push('   ')
+          letters.push('   ');
+          spaced.push('   ')
         }
-        letters = letters.join('')
-        spaced = spaced.join(' ')
-      });
+      })
+      letters = letters.join('')
+      spaced = spaced.join(' ')
 
       // word sums
       const splitStringSpaced = input.trim().split(' ');

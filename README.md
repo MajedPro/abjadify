@@ -13,10 +13,17 @@ Using the App:
 - Input any arabic text or passage from the Quran into the input box
 - hit enter or press the submit button
 - the app will generate data based on the input
-- the letters sum portion is grouped by word by default and displays from right to left, flipping the toggle switch will seperate by letter
+- the letters sum portion is grouped by word by default and displays from left to right, flipping the toggle switch will seperate by letter
 
 ## Teck Stack
 - React
 - react-dom / react-router-dom
 - Redux
 - redux-thunk / react-redux
+
+## Screenshots
+![abjadify landing page](https://user-images.githubusercontent.com/36980730/44253378-66364380-a1cd-11e8-9988-a136c8184ec1.PNG)
+  landing page
+
+![abjadify values](https://user-images.githubusercontent.com/36980730/44253449-a85f8500-a1cd-11e8-9ef8-e12d9c9df68d.PNG)
+  outputted values
