@@ -5,9 +5,9 @@ import './totalSum.css'
 export function TotalSum(props) {
   let hdivis9, hdivis7, edivis9, edivis7, hmod9, emod9, hsum, esum;
   if (props.heavenly) {
-    hdivis9 = props.heavenly % 9 === 0 ? <p>divided by 9 = {props.heavenly / 9}</p> : null
+    hdivis9 = props.heavenly % 19 === 0 ? <p>divided by 9 = {props.heavenly / 19}</p> : null
     hdivis7 = props.heavenly % 7 === 0 ? <p>divided by 7 = {props.heavenly / 7}</p> : null
-    edivis9 = props.earthly % 9 === 0 ? <p>divided by 9 = {props.earthly / 9}</p> : null
+    edivis9 = props.earthly % 19 === 0 ? <p>divided by 9 = {props.earthly / 19}</p> : null
     edivis7 = props.earthly % 7 === 0 ? <p>divided by 7 = {props.earthly / 7}</p> : null
     hmod9 = <p>mod 9: {props.heavenly % 9}</p>
     emod9 = <p>mod 9: {props.earthly % 9}</p>
