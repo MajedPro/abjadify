@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import TextInput from './components/textInput'
-import TotalSum from './components/totalSum'
-import WordSums from './components/wordSums'
-import LetterSums from './components/letterSums'
+import DashBoard from './components/dashboard'
 import Footer from './components/footer'
 import './App.css';
 
@@ -35,10 +33,7 @@ class App extends Component {
             <h1 className="App-title">Abjadify</h1>
           </header>
           <main className='main'>
-            <TextInput />
-            <TotalSum />
-            <WordSums />
-            <LetterSums toggle={() => this.toggle()} />
+            <DashBoard />
           </main>
         </div>
         <Footer />

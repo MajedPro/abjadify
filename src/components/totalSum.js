@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './totalSum.css'
+import { downloadText } from '../actions';
 
 export function TotalSum(props) {
   let hdivis9, hdivis7, edivis9, edivis7, hmod9, emod9, hsum, esum;
@@ -29,8 +30,21 @@ export function TotalSum(props) {
     {edivis7}
     {emod9}
   </div> : null
+
+  let wordString = ''
+  let test = props.words.forEach((word) => {
+    wordString += `${word.key} ${word.value}\n`
+  })
+
   return (
     <div className='totals'>
+      <button onClick={() => {
+        console.log(wordString)
+        props.dispatch(downloadText(wordString, 'apples.txt'))}}
+        type='button'
+      >
+        download
+      </button>
       {heavenly}
       {earthly}
     </div>
@@ -40,6 +54,7 @@ export function TotalSum(props) {
 
 const mapStateToProps = (state) => ({
   heavenly: state.heavenly.total,
+  words: state.heavenly.wordSums,
   earthly: state.earthly.total
 })
 

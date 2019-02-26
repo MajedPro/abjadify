@@ -29,9 +29,9 @@ const heavenly = (state = initialState, action) => {
           letters.push('   ');
           spaced.push('   ')
         }
-        letters = letters.join('')
-        spaced = spaced.join(' ')
       });
+      letters = letters.join('')
+      spaced = spaced.join(' ')
 
       // word sums
       const splitStringSpaced = input.trim().split(' ');
